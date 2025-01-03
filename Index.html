@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gangadhari Gaming World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4CAF50, #f87c01);
+            color: #beeb5b;
+        }
+        header {
+            background: linear-gradient(to right, #4CAF50, #f87c01);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            max-width: 250px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .search-bar input {
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .search-bar button {
+            padding: 8px 12px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: rgb(23, 22, 22);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        .search-bar button:hover {
+            background-color: #f87c01;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: auto;
+            background-color: rgba(240, 150, 150, 0.7);
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        nav a {
+            color: rgb(236, 10, 10);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #386319;
+        }
+        .content {
+            padding-top: 60px;
+        }
+        .image-container {
+            position: relative;
+            text-align: center;
+            color: rgb(168, 2, 2);
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .overlay-text, .sub-text, .third-text, .fourth-text, .fifth-text {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(19, 19, 19, 0.7);
+        }
+        .overlay-text {
+            top: 30%; /* Position for the first line */
+            font-size: 40px; /* Increased font size */
+        }
+        .sub-text {
+            top: 35%; /* Position for the second line */
+            font-size: 30px;
+        }
+        .third-text {
+            top: 40%; /* Position for the third line */
+            font-size: 20px;
+        }
+        .fourth-text {
+            top: 45%; /* Position for the fourth line */
+            font-size: 30px;
+        }
+        .fifth-text {
+            top: 50%; /* Position for the fifth line */
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="studio logo.jpg" alt="Studio Logo" class="logo">
+        <div class="search-bar">
+            <input type="text" id="search-query" placeholder="Search..." />
+            <button type="button" onclick="searchPage()">Search</button>
+        </div>
+    </div>
+</header>
+
+<!-- Fixed navigation links at the top right of the page -->
+<nav>
+    <a href="game.html">Games We Have</a> <!-- Link to the games page -->
+    <a href="trailer.html">Trailer's</a>
+    <a href="comic's.html">Comic's</a>
+    <a href="About Us.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<!-- Image section with five lines of text overlay -->
+<div class="content">
+    <div class="image-container">
+        <img src="studio logo.jpg" alt="Gangadhari Gaming World" class="main-image">
+        <div class="overlay-text">Welcome to Gangadhari Gaming World</div>
+        <div class="sub-text">Your adventure begins here</div>
+        <div class="third-text">Explore, Play, Conquer!</div>
+        <div class="fourth-text">Games Created based on mythology</div>
+        <div class="fifth-text">Get ready for epic challenges!</div> 
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Gangadhari Gaming World. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function searchPage() {
+        const query = document.getElementById('search-query').value.toLowerCase();
+        
+        // Basic redirect based on search query
+        if (query.includes('games')) {
+            window.location.href = 'game.html'; // Redirect to games page
+        } else if (query.includes('kesari_nandhana_series1')) {
+            window.location.href = 'kesari_nandhana_series1.html'; // Redirect to trailers page
+        } else if (query.includes('kesari_nandhana_series2')) {
+            window.location.href = 'kesari_nandhana_series2.html'; // Redirect to trailers page
+        } else if (query.includes('kesari_nandhana_series3')) {
+            window.location.href = 'kesari_nandhana_series3.html'; // Redirect to trailers page
+        } else if (query.includes('trailer')) {
+            window.location.href = 'trailer.html'; // Redirect to trailers page
+        } else if (query.includes('comic')) {
+            window.location.href = 'comic\'s.html'; // Redirect to comics page
+        } else if (query.includes('about')) {
+            window.location.href = 'About Us.html'; // Redirect to About Us page
+        } else if (query.includes('contact')) {
+            window.location.href = 'contact.html'; // Redirect to contact page
+        } else {
+            alert('No results found for "' + query + '"');
+        }
+    }
+    function checkEnter(event) {
+        if (event.key === "Enter") {
+            searchPage(); // Trigger search when Enter key is pressed
+        }
+    }
+</script>
+
+</body>
+</html>
