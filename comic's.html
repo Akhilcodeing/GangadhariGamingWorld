@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gangadhari Comic's World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4CAF50, #f87c01);
+            color: #c50a4f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f87c01;
+        }
+        header {
+            position: absolute;
+            top: 60px;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(to right, #4CAF50, #f87c01);
+            color: rgb(236, 60, 60);
+            padding: 10px 0;
+        }
+        .slider-container {
+            position: relative;
+            max-width: 80%;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin-top: 120px;
+        }
+        .slider-container img {
+            max-width: 100%;
+            max-height: 60vh;
+            border-radius: 10px;
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slider-container img.active {
+            display: block;
+            opacity: 1;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="game.html">Games We Have</a>
+    <a href="trailer.html">Trailer</a>
+    <a href="About Us.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<header>
+    <h1>Kesari Nandhana (Son Of Kesari) SERIES-1 Comic</h1>
+</header>
+
+<!-- Slider -->
+<div class="slider-container">
+    <img src="comic.jpg" alt="Comic Image 1" class="active">
+    <img src="comic 2.png" alt="Comic Image 2">
+    <img src="comic3.jpg" alt="Comic Image 3">
+    <img src="comic4.jpg" alt="Comic Image 4">
+    <img src="comic5.jpg" alt="Comic Image 5">
+    <img src="comic6.jpg" alt="Comic Image 6">
+    <img src="comic7.jpg" alt="Comic Image 7">
+    <img src="comic8.jpg" alt="Comic Image 8">
+    <img src="comic9.png" alt="Comic Image 9">
+    <img src="comic10.jpg" alt="Comic Image 10">
+    <img src="comic11.jpg" alt="Comic Image 11">
+    <img src="comic12.jpg" alt="Comic Image 12">
+    <img src="comic13.jpg" alt="Comic Image 13">
+    <img src="comic14.jpg" alt="Comic Image 14">
+    <img src="comic15.jpg" alt="Comic Image 15">
+    <img src="comic16.jpg" alt="Comic Image 16">
+    <img src="comic17.jpg" alt="Comic Image 17">
+    <img src="comic18.jpg" alt="Comic Image 18">
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+<footer>
+    <p>&copy; 2024 Gangadhari Gaming World. All Rights Reserved.</p>
+</footer>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider-container img');
+
+    function changeSlide(direction) {
+        // Hide the current slide
+        slides[currentSlide].classList.remove('active');
+        // Calculate the new slide index
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        // Show the new slide
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+            changeSlide(-1); // Move to the previous slide
+        } else if (event.key === 'ArrowRight') {
+            changeSlide(1); // Move to the next slide
+        }
+    });
+
+    // Auto slide every 3 seconds
+    setInterval(() => {
+        changeSlide(1);
+    }, 3000); // Change every 3 seconds
+</script>
+
+</body>
+</html>
